@@ -8,9 +8,8 @@ class RedisServer(models.Model):
     name = models.CharField(
         max_length=255, unique=True, help_text=_("A name to identify the server")
     )
-    slug = models.SlugField(max_length=255, unique=True, allow_unicode=True)
     host = models.CharField(max_length=255, help_text=_("redis server host"))
-    port = models.PositiveIntegerField(max_length=4, help_text=_("redis server port"))
+    port = models.PositiveIntegerField(default=6379, help_text=_("redis server port"))
     password = models.CharField(max_length=255, help_text=_("redis server host"))
     db = models.PositiveIntegerField()
 
