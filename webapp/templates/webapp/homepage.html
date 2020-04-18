@@ -1,5 +1,5 @@
 {% block content %}
-<a href="{% url webapp:ServerCreate %}">Create a new redis server</a>
+<a href="{% url 'webapp:ServerCreate' %}">Create a new redis server</a>
 
 <table style="width: 100%;">
     <tr>
@@ -8,8 +8,6 @@
         <th>passowrd</th>
         <th>db</th>
     </tr>
-
-
     {% for server in servers %}
     <tr>
         <td>server.name</td>
@@ -19,4 +17,4 @@
     </tr>
     {% endfor %}
 </table>
-{% endblock content %}
+{% endblock %}
