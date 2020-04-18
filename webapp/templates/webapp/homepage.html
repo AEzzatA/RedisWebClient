@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% block content %}
 <a href="{% url 'webapp:ServerCreate' %}">Create a new redis server</a>
 
@@ -10,10 +11,12 @@
     </tr>
     {% for server in servers %}
     <tr>
-        <td>server.name</td>
-        <td>server.host</td>
-        <td>server.password</td>
-        <td>server.db</td>
+        <td>
+            <a href="{% url 'webapp:ServerDetail' server.pk %}">{{ server.name }}</a>
+        </td>
+        <td>{{ server.host }}</td>
+        <td>****password</td>
+        <td>{{ server.db }}</td>
     </tr>
     {% endfor %}
 </table>

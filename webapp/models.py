@@ -17,7 +17,7 @@ class RedisServer(models.Model):
         ordering = ("-name",)
 
     def get_absolute_url(self):
-        return reverse("server-info", kwargs={"pk": self.pk})
+        return reverse("webapp:ServerDetail", kwargs={"pk": self.pk})
 
     def __str__(self) -> str:
         return self.name

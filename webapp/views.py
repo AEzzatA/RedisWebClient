@@ -17,7 +17,12 @@ class ServerCreate(generic.CreateView):
     template_name = "webapp/create_server.html"
     model = RedisServer
     fields = CRUD_FIELDS
+    success_url = reverse_lazy("webapp:ServerIndex")
 
+class ServerDetail(generic.DeleteView):
+    model = RedisServer
+    context_object_name = "server"
+    template_name = "webapp/server_detail.html"
 
 class ServerUpdate(generic.UpdateView):
     model = RedisServer
