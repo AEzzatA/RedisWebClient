@@ -8,7 +8,7 @@ CRUD_FIELDS: List[str] = ["name", "host", "password", "port", "db"]
 
 
 class ServerIndex(generic.ListView):
-    template_name = "webapp/servers_index.html"
+    template_name = "webapp/homepage.html"
     context_object_name = "servers"
     queryset = RedisServer.objects.all()
 

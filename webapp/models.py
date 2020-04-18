@@ -13,6 +13,9 @@ class RedisServer(models.Model):
     password = models.CharField(max_length=255, help_text=_("redis server host"))
     db = models.PositiveIntegerField()
 
+    class Meta:
+        ordering = ("-name",)
+
     def get_absolute_url(self):
         return reverse("server-info", kwargs={"pk": self.pk})
 
