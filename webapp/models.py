@@ -1,7 +1,6 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
-from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 
 
 class RedisServer(models.Model):
@@ -10,8 +9,7 @@ class RedisServer(models.Model):
     )
     host = models.CharField(max_length=255, help_text=_("redis server host"))
     port = models.PositiveIntegerField(default=6379, help_text=_("redis server port"))
-    password = models.CharField(max_length=255, help_text=_("redis server host"))
-    db = models.PositiveIntegerField()
+    password = models.CharField(max_length=255, blank=True, help_text=_("redis server host"))
 
     class Meta:
         ordering = ("-name",)
